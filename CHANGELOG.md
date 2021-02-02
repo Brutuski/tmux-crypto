@@ -6,7 +6,7 @@
 </p>
 
 ### Index
-* [v 1.0.0](#v1.0.0)
+* [v1.0.0](#v1.0.0)
 * [Versioning System](#versioning-system)
 * [License](#license)
 
