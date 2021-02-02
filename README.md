@@ -39,6 +39,7 @@ For more crypto currency requests, drop it [here](https://github.com/Brutuski/tm
 <p align="center"><img src="https://raw.githubusercontent.com/Brutuski/tmux-crypto/main/assets/screenshot2.png"><p>
 
 Terminal and Tmux theme shown here is [Lighthaus](https://github.com/lighthaus-theme)
+
 _Tmux Lighthaus theme coming soon_
 
 #### Requirements
