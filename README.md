@@ -112,7 +112,7 @@ set -g status-left "......#[fg=#21252D,bg=#5AD1AA] #{eth_eur} | #{ada_eur} "
 
 #### Changelog
 ``` vim
-v1.0.0
+v1.0.1
 ```
 Changes can be tracked in the [CHANGELOG](https://github.com/Brutuski/tmux-crypto/blob/main/CHANGELOG.md)
 

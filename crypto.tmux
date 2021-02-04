@@ -3,7 +3,7 @@
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/scripts/helpers.sh"
 
-pia_commands=(
+crypto_commands=(
   "#($CURRENT_DIR/scripts/ada_usd.sh)"
   "#($CURRENT_DIR/scripts/ada_eur.sh)"
   "#($CURRENT_DIR/scripts/btc_usd.sh)"
@@ -20,7 +20,7 @@ pia_commands=(
   "#($CURRENT_DIR/scripts/nano_eur.sh)"
 )
 
-pia_interpolation=(
+crypto_interpolation=(
 	"\#{ada_usd}"
 	"\#{ada_eur}"
 	"\#{btc_usd}"
@@ -46,8 +46,8 @@ set_tmux_options() {
 do_interpolation() {
 	local interpolated="$1"
 
-	for ((i=0; i<${#pia_commands[@]}; i++)); do
-		interpolated=${interpolated/${pia_interpolation[$i]}/${pia_commands[$i]}}
+	for ((i=0; i<${#crypto_commands[@]}; i++)); do
+		interpolated=${interpolated/${crypto_interpolation[$i]}/${crypto_commands[$i]}}
 	done
 
 	echo "$interpolated"
