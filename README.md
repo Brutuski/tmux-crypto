@@ -4,6 +4,7 @@
         <img alt="Status" src="https://img.shields.io/badge/Maintained-Yes-44B273.svg">
         <img alt="License" src="https://img.shields.io/badge/LICENSE-MIT-1D918B.svg">
 </p>
+ <p align="center"><a href="https://www.buymeacoffee.com/asirohi"><img alt="Status" src="https://raw.githubusercontent.com/Brutuski/tmux-crypto/8a44fec52097cede774504f5bdaca5386abac3cc/assets/bmc.svg" width="200" height="23"></p>
 
 ### Index
 * [Getting Started](#getting-started)
@@ -20,17 +21,28 @@
 
 #### Getting Started
 Keep a tarck of crypto currencies right from tmux.
-The prices are shown in either _USD_ or _EUR_. 
-Current supported currencies are:
-- Cardano -> ADA
-- Bitcoin -> BTC
-- Polkadot -> DOT
-- Ethereum -> ETH
-- Chainlink -> LINK
-- Litecoin -> LTC
-- Nano -> NANO
+You can choose between the following fiat currencies:
+- AUD → A$
+- CAD → C$
+- CHF → Fr
+- DKK → kr
+- EUR → €
+- GBP → £
+- NOK → kr
+- SEK → kr
+- USD → $
+
+Current supported crypto currencies are:
+- Cardano → ADA
+- Bitcoin → BTC
+- Polkadot → DOT
+- Ethereum → ETH
+- Chainlink → LINK
+- Litecoin → LTC
+- Nano → NANO
 
 The data is fetched from [Kraken's API](https://www.kraken.com/features/api).
+For some fiat currencies the data is fetched from [Exchange Rates API](https://github.com/exchangeratesapi/exchangeratesapi).
 For more crypto currency requests, drop it [here](https://github.com/Brutuski/tmux-crypto/issues)
 
 #### Screenshots
@@ -79,29 +91,7 @@ _Tmux Lighthaus theme coming soon_
 - Reload the tmux config and the changes should take effect.
 
 #### Options
-All available format strings
-``` vim
-#{ada_usd}
-#{ada_eur}
-
-#{btc_usd}
-#{btc_eur}
-
-#{dot_usd}
-#{dot_eur}
-
-#{eth_usd}
-#{eth_eur}
-
-#{ink_eur}
-#{link_usd}
-
-#{ltc_usd}
-#{ltc_eur}
-
-#{nano_usd}
-#{nano_eur}
-```
+All available format strings and options can be found in [OPTIONS](https://github.com/Brutuski/tmux-crypto/blob/main/OPTIONS.md).
 
 #### Example
 Format strings can be edited to what the user needs.
@@ -112,7 +102,7 @@ set -g status-left "......#[fg=#21252D,bg=#5AD1AA] #{eth_eur} | #{ada_eur} "
 
 #### Changelog
 ``` vim
-v1.0.1
+v1.1.1
 ```
 Changes can be tracked in the [CHANGELOG](https://github.com/Brutuski/tmux-crypto/blob/main/CHANGELOG.md)
 
