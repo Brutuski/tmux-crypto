@@ -8,6 +8,7 @@
 ### Index
 * [v1.0.0](#v1.0.0)
 * [v1.0.1](#v1.0.1)
+* [v1.1.1](#v1.1.1)
 * [Versioning System](#versioning-system)
 * [License](#license)
 
@@ -18,6 +19,10 @@ _02/02/2021_
 #### v1.0.1
 _04/02/2021_
 - Corrected function names in main script
+
+#### v1.1.1
+_15/02/2021_
+- Added support for new fiat currencies.
 
 #### Versioning System
 Tmux-Crypto uses [Semantic versioning 2.0.0](https://semver.org)
