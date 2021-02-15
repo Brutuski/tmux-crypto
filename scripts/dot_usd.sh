@@ -11,7 +11,7 @@ get_price()
 
     if [[ $api_status == 'online' ]]; then
         echo "$price" | bc -l | awk '{printf "DOT: $%.2f", $1}'
-    elif [[ $api_sttaus == 'offline' ]]; then
+    elif [[ $api_status == 'offline' ]]; then
         echo "API offline"
     else
         echo "Error, No internet"

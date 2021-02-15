@@ -7,10 +7,10 @@ api_status=$(curl -s  https://api.kraken.com/0/public/SystemStatus | jq '.result
 
 get_price()
 {
-    price=$(curl -s https://api.kraken.com/0/public/Ticker\?pair\=ETHEUR | jq '.result.XETHZEUR.a[0]' | sed 's/\"//g')
+    price=$(curl -s  https://api.kraken.com/0/public/Ticker?pair=BTCAUD| jq '.result.XBTAUD.a[0]' | sed 's/\"//g')
 
     if [[ $api_status == 'online' ]]; then
-        echo "$price" | bc -l | awk '{printf "ETH: %.2f€", $1}'
+        echo -e "$price" | bc -l | awk '{printf "BTC: A$%.2f", $1}'
     elif [[ $api_status == 'offline' ]]; then
         echo "API offline"
     else
