@@ -14,7 +14,7 @@ get_price()
     price_nok=$(echo "$price * $nok" | bc)
 
     if [[ $api_status == 'online' ]]; then
-        echo -e "$price_nok" | bc -l | awk '{printf "ADA: kr%.3f", $1}'
+        echo -e "$price_nok" | bc -l | awk '{printf "ADA: %.3fkr", $1}'
     elif [[ $api_status == 'offline' ]]; then
         echo "API offline"
     else

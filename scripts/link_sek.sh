@@ -14,7 +14,7 @@ get_price()
     price_sek=$(echo "$price * $sek" | bc)
 
     if [[ $api_status == 'online' ]]; then
-        echo -e "$price_sek" | bc -l | awk '{printf "LINK: kr%.2f", $1}'
+        echo -e "$price_sek" | bc -l | awk '{printf "LINK: %.2fkr", $1}'
     elif [[ $api_sttaus == 'offline' ]]; then
         echo "API offline"
     else

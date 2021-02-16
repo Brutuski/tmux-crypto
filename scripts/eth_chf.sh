@@ -10,7 +10,7 @@ get_price()
     price=$(curl -s https://api.kraken.com/0/public/Ticker\?pair\=ETHCHF | jq '.result.ETHCHF.a[0]' | sed 's/\"//g')
 
     if [[ $api_status == 'online' ]]; then
-        echo "$price" | bc -l | awk '{printf "ETH: Fr%.2f", $1}'
+        echo "$price" | bc -l | awk '{printf "ETH: %.2fFr", $1}'
     elif [[ $api_status == 'offline' ]]; then
         echo "API offline"
     else

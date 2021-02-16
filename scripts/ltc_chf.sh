@@ -14,7 +14,7 @@ get_price()
     price_chf=$(echo "$price * $chf" | bc)
 
     if [[ $api_status == 'online' ]]; then
-        echo -e "$price_chf" | bc -l | awk '{printf "LTC: Fr%.2f", $1}'
+        echo -e "$price_chf" | bc -l | awk '{printf "LTC: %.2fFr", $1}'
     elif [[ $api_status == 'offline' ]]; then
         echo "API offline"
     else

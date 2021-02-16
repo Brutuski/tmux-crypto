@@ -14,7 +14,7 @@ get_price()
     price_dkk=$(echo "$price * $dkk" | bc)
 
     if [[ $api_status == 'online' ]]; then
-        echo -e "$price_dkk" | bc -l | awk '{printf "ETH: kr%.2f", $1}'
+        echo -e "$price_dkk" | bc -l | awk '{printf "ETH: %.2fkr", $1}'
     elif [[ $api_status == 'offline' ]]; then
         echo "API offline"
     else
