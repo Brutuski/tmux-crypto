@@ -10,6 +10,7 @@
 * [v1.0.1](#v1.0.1)
 * [v1.1.1](#v1.1.1)
 * [v1.1.2](#v1.1.2)
+* [v1.2.2](#v1.1.2)
 * [Versioning System](#versioning-system)
 * [License](#license)
 
@@ -28,6 +29,10 @@ _15/02/2021_
 #### v1.1.2
 _16/02/2021_
 - Corrected display format for fiat currencies.
+
+#### v1.2.2
+_02/04/2021_
+- KSM support added via [Pull Request](https://github.com/Brutuski/tmux-crypto/pull/3)
 
 #### Versioning System
 Tmux-Crypto uses [Semantic versioning 2.0.0](https://semver.org)

@@ -4,7 +4,8 @@
         <img alt="Status" src="https://img.shields.io/badge/Maintained-Yes-44B273.svg">
         <img alt="License" src="https://img.shields.io/badge/LICENSE-MIT-1D918B.svg">
 </p>
-        <p align="center"><a href="https://www.buymeacoffee.com/asirohi"><img alt="Status" src="https://raw.githubusercontent.com/Brutuski/tmux-crypto/8a44fec52097cede774504f5bdaca5386abac3cc/assets/bmc.svg" width="150" height="23">
+<p align="center">
+        <a href="https://www.buymeacoffee.com/asirohi"><img alt="Status" src="https://raw.githubusercontent.com/Brutuski/tmux-crypto/8a44fec52097cede774504f5bdaca5386abac3cc/assets/bmc.svg" width="150" height="23">
  </p>
 
 ### Index
@@ -118,7 +119,7 @@ set -g status-left "......#[fg=#21252D,bg=#5AD1AA] #{eth_eur} | #{ada_eur} "
 #### Changelog
 
 ```vim
-v1.1.2
+v 1.2.2
 ```
 
 Changes can be tracked in the [CHANGELOG](https://github.com/Brutuski/tmux-crypto/blob/main/CHANGELOG.md)
