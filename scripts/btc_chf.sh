@@ -1,24 +1,14 @@
 #!/usr/bin/env bash
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}"  )" && pwd  )"
-source "$CURRENT_DIR/helpers.sh"
+get_price() {
+    local price
+    price=$(curl -s 'https://api.coinbase.com/v2/prices/BTC-CHF/spot' \
+            | jq -r '.data.amount' 2>/dev/null)
 
-api_status=$(curl -s  https://api.kraken.com/0/public/SystemStatus | jq '.result.status'| sed 's/\"//g')
-
-get_price()
-{
-    price=$(curl -s  https://api.kraken.com/0/public/Ticker?pair=BTCEUR | jq '.result.XXBTZEUR.a[0]' | sed 's/\"//g')
-
-    chf=$(curl -s https://api.exchangeratesapi.io/latest | jq .'rates'.'CHF')
-
-    price_chf=$(echo "$price * $chf" | bc)
-
-    if [[ $api_status == 'online' ]]; then
-        echo -e "$price_chf" | bc -l | awk '{printf "BTC: %.2fZFr", $1}'
-    elif [[ $api_status == 'offline' ]]; then
-        echo "API offline"
+    if [[ -n "$price" && "$price" != "null" ]]; then
+        printf "BTC: %.2fFr\n" "$price"
     else
-        echo "Error, No internet"
+        echo "BTC: --CHF"
     fi
 }
 
