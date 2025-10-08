@@ -1,24 +1,14 @@
 #!/usr/bin/env bash
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}"  )" && pwd  )"
-source "$CURRENT_DIR/helpers.sh"
+get_price() {
+    local price
+    price=$(curl -s 'https://api.coinbase.com/v2/prices/LTC-CAD/spot' \
+            | jq -r '.data.amount' 2>/dev/null)
 
-api_status=$(curl -s  https://api.kraken.com/0/public/SystemStatus | jq '.result.status'| sed 's/\"//g')
-
-get_price()
-{
-    price=$(curl -s  https://api.kraken.com/0/public/Ticker?pair=LTCEUR | jq '.result.XLTCZEUR.a[0]' | sed 's/\"//g')
-
-    cad=$(curl -s https://api.exchangeratesapi.io/latest | jq .'rates'.'CAD')
-
-    price_cad=$(echo "$price * $cad" | bc)
-
-    if [[ $api_status == 'online' ]]; then
-        echo -e "$price_cad" | bc -l | awk '{printf "LTC: C$%.2f", $1}'
-    elif [[ $api_status == 'offline' ]]; then
-        echo "API offline"
+    if [[ -n "$price" && "$price" != "null" ]]; then
+        printf "LTC: %.2fC$\n" "$price"
     else
-        echo "Error, No internet"
+        echo "LTC: --CAD"
     fi
 }
 
